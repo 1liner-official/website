@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import {Noto_Sans_Thai} from 'next/font/google'
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const Noto = Noto_Sans_Thai({ subsets: ['thai','latin'] })
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,10 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      <body 
+        className={`${Noto.className} antialiased bg-zinc-900`}
       >
+        <Navbar/>
+        <div className=" min-h-screen">
         {children}
+        </div>
       </body>
     </html>
   );
