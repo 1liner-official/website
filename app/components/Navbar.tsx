@@ -15,7 +15,7 @@ export default function Navbar() {
         <button className=""><Icon icon={"teenyicons:instagram-outline"}/> </button>
       </div>
     </div>
-    <div className=" w-full h-16 absalute backdrop-blur-xl">
+    <div className=" z-[5000] w-full h-16 absalute backdrop-blur-xl">
     </div>
   </nav>
   )
